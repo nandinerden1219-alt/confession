@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AAAAAAAAAAAAAAAAAAAAAA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        font-family: "Nunito", sans-serif;
+        background: #000;
+      }
+      .wrap {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+      }
+      .slide {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 48px 32px;
+        animation: fadeIn 0.5s ease;
+        width: 100%;
+        max-width: 600px;
+      }
+      .slide.active {
+        display: flex;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .slide img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 24px;
+      }
+      .slide p {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 32px;
+        max-width: 440px;
+        line-height: 1.55;
+      }
+      .next-btn {
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+        padding: 11px 32px;
+        border-radius: 30px;
+        font-family: "Nunito", sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .next-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.8);
+      }
+      .choice-row {
+        display: flex;
+        gap: 18px;
+        margin-top: 4px;
+      }
+      .yes-btn {
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+        padding: 11px 40px;
+        border-radius: 30px;
+        font-family: "Nunito", sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .yes-btn:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: #fff;
+      }
+      .no-btn {
+        background: transparent;
+        border: 1.5px solid rgba(255, 60, 60, 0.45);
+        color: rgba(255, 80, 80, 0.65);
+        padding: 11px 40px;
+        border-radius: 30px;
+        font-family: "Nunito", sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: not-allowed;
+        transition: transform 0.15s;
+        user-select: none;
+      }
+      .no-btn:hover {
+        transform: scale(0.88) rotate(-5deg);
+      }
+      #slide10 {
+        background: linear-gradient(
+          135deg,
+          #ff9eb5 0%,
+          #ffb7c5 50%,
+          #ffd6e0 100%
+        );
+        min-height: 100vh;
+        max-width: 100%;
+      }
+      #slide10 p {
+        color: #7a1a35;
+      }
+      .hearts {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 0;
+      }
+      .heart {
+        position: absolute;
+        bottom: -30px;
+        animation: floatUp 3.2s ease-in forwards;
+        opacity: 0;
+      }
+      @keyframes floatUp {
+        0% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-110vh) scale(0.4);
+        }
+      }
+      #slide10 img {
+        position: relative;
+        z-index: 1;
+      }
+      #slide10 p {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap" id="slideshow">
+      <div class="slide active" id="slide1">
+        <img src="/image 1.png" alt="slide 1" />
+        <p>Hallo........dsnfjsdfn</p>
+        <button class="next-btn" onclick="goTo(2)">Next</button>
+      </div>
+      <div class="slide" id="slide2">
+        <img src="/image2.png" alt="slide 2" />
+        <p>I have to tell u something....</p>
+        <button class="next-btn" onclick="goTo(3)">Next</button>
+      </div>
+      <div class="slide" id="slide3">
+        <img src="/image3.png" alt="slide 3" />
+        <p>there's something i've been holding back .....</p>
+        <button class="next-btn" onclick="goTo(4)">Next</button>
+      </div>
+      <div class="slide" id="slide4">
+        <img src="/image4.png" alt="slide 4" />
+        <p>
+          it feels small but also terrifying to say<br />like i'm exposing too
+          much of myself
+        </p>
+        <button class="next-btn" onclick="goTo(5)">Next</button>
+      </div>
+      <div class="slide" id="slide5">
+        <img src="/image5.png" alt="slide 5" />
+        <p>and yeah... it's embarrassing</p>
+        <button class="next-btn" onclick="goTo(6)">Next</button>
+      </div>
+      <div class="slide" id="slide6">
+        <img src="/image6.png" alt="slide 6" />
+        <p>i keep overthinking it<br />and now i feel kind of ridiculous</p>
+        <button class="next-btn" onclick="goTo(7)">Next</button>
+      </div>
+      <div class="slide" id="slide7">
+        <img src="/image7.png" alt="slide 7" />
+        <p>...</p>
+        <button class="next-btn" onclick="goTo(8)">Next</button>
+      </div>
+      <div class="slide" id="slide8">
+        <img src="/image8.png" alt="slide 8" />
+        <p>but still</p>
+        <button class="next-btn" onclick="goTo(9)">Next</button>
+      </div>
+      <div class="slide" id="slide9">
+        <img src="/image9.png" alt="slide 9" />
+        <p>do you wanna go out with me?</p>
+        <div class="choice-row">
+          <button class="yes-btn" onclick="goTo(10)">yes</button>
+          <button class="no-btn" onclick="wiggle(this)">no</button>
+        </div>
+      </div>
+      <div class="slide" id="slide10">
+        <div class="hearts" id="hearts"></div>
+        <img src="/image10.png" alt="yay" />
+        <p>Yay, lets go! 🎉</p>
+      </div>
+    </div>
+    <script>
+      function goTo(n) {
+        document.querySelectorAll(".slide").forEach(function (s) {
+          s.classList.remove("active");
+        });
+        document.getElementById("slide" + n).classList.add("active");
+        if (n === 10) startHearts();
+      }
+      function wiggle(btn) {
+        btn.style.transform =
+          "scale(0.8) rotate(" + (Math.random() * 22 - 11) + "deg)";
+        setTimeout(function () {
+          btn.style.transform = "";
+        }, 300);
+      }
+
+      var heartsInterval = null;
+      function startHearts() {
+        spawnBatch(20);
+        heartsInterval = setInterval(function () {
+          spawnBatch(1);
+        }, 600);
+      }
+    </script>
+  </body>
+</html>
